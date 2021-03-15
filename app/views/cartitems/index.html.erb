@@ -1,10 +1,6 @@
 <h1>My cart</h1>
 
-order id
-menu name
-nenu price
-status
-delete
+
 
 <section class="s2">
 <label class="ll1">
@@ -14,15 +10,24 @@ delete
     <th class="menu-title">Menu name</th>
     <th class="menu-title">Menu price</th>
     <th class="menu-title">Status</th>
+    
   </tr>
-  <% User.all.each do |u|%>
-  <tr>
-  <% Order.all.each do |o|%>
-  <td class="menu-title">
-    <% i=u.joins(:o)%>
-    <%= i%>
+ 
+  
+    <% user= User.find(@current_user.id)%>
+    <% user.orderitems.each do |i| %>
+      <tr>
+    <td class="menu-title"> <%= i.order_id %> </td>
+    <td class="menu-title"> <%= i.menu_name %> </td>
+    <td class="menu-title"> <%= i.menu_price %> </td>
+    <td class="menu-title"> Pending </td>
+    
+ 
+    
     <%end%>
-  </td>
-  </tr>
-  <%end%>
+    </td>
+    </tr>
+  
+  
+
   </table>

@@ -1,0 +1,33 @@
+<h1>Orders</h1>
+
+
+
+<section class="s2">
+<label class="ll1">
+<table class="menu-heading">
+  <tr>
+    <th class="menu-title">User id</th>
+    <th class="menu-title">Order id</th>
+    <th class="menu-title">Menu name</th>
+    <th class="menu-title">Menu price</th>
+    
+    
+  </tr>
+ 
+  
+    <% User.all.each do |u|%>
+        <% u.orderitems.each do |i| %>
+        <tr>
+        <td class="menu-title"> <%=u.id%> </td>
+        <td class="menu-title"> <%= i.order_id %> </td>
+        <td class="menu-title"> <%= i.menu_name %> </td>
+        <td class="menu-title"> <%= i.menu_price %> </td>
+        
+    <%end%>
+    </td>
+    </tr>
+    <%end%>
+  
+  
+
+  </table>

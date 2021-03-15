@@ -1,6 +1,6 @@
 class SessionsController  < ApplicationController
     skip_before_action :ensure_user_logged_in
-    def index
+    def new
         render "new"
     end
     def signin
