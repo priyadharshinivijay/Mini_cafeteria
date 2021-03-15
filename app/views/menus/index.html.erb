@@ -1,0 +1,32 @@
+<main class="m1">      
+<article><h1 class="h1h">Menu List </h1>
+<%=link_to "Edit menu",update_menu_path%> 
+<%=link_to "View orders",orders_path , class: "link-to"%>
+
+<%= form_with(url: menus_path, method: "post",class:"s1") do%>
+    <input type="text" placeholder="Menu name" class="textfield1" name="menu_name">
+    <input type="text" class="textfield2" placeholder="Menu price" name="menu_price">
+    <input type="submit" value="Add" class="b1" placeholder="Add">
+<%end%>
+
+
+<section class="s2">
+<label class="ll1">
+<table class="menu-heading">
+  <tr>
+    <th class="menu-title">Menu name</th>
+    <th class="menu-title">Menu price</th>
+  </tr>
+
+<% Menu.all.each do |menu| %>
+  <tr>
+  
+    <td class="menu-title"> <%=menu.menu_name%> </td>
+    <td class="menu-title"> <%=menu.menu_price%> </td>
+  </tr>
+<%end%>
+</table>
+</label>
+
+
+</section>

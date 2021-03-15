@@ -1,0 +1,28 @@
+<h1>My cart</h1>
+
+order id
+menu name
+nenu price
+status
+delete
+
+<section class="s2">
+<label class="ll1">
+<table class="menu-heading">
+  <tr>
+    <th class="menu-title">Order id</th>
+    <th class="menu-title">Menu name</th>
+    <th class="menu-title">Menu price</th>
+    <th class="menu-title">Status</th>
+  </tr>
+  <% User.all.each do |u|%>
+  <tr>
+  <% Order.all.each do |o|%>
+  <td class="menu-title">
+    <% i=u.joins(:o)%>
+    <%= i%>
+    <%end%>
+  </td>
+  </tr>
+  <%end%>
+  </table>

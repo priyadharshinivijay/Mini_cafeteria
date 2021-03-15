@@ -1,0 +1,28 @@
+<main class="m1">      
+<article><h1 class="h1h">Update menu </h1>
+<%=link_to "Home",menus_path %> 
+<%= form_with(url: "/menus/menu_name", method: "put",class:"s1") do%>
+    <input type="text" placeholder="Menu name" class="textfield1" name="menu_name">
+    <input type="text" class="textfield2" placeholder="Menu price" name="menu_price">
+    <input type="submit" value="Update" class="b1" placeholder="Update">
+<%end%>
+<section class="s2">
+<label class="ll1">
+<table class="menu-heading">
+  <tr>
+    <th class="menu-title">Menu name</th>
+    <th class="menu-title">Menu price</th>
+  </tr>
+
+<% Menu.all.each do |menu| %>
+  <tr>
+  
+    <td class="menu-title"> <%=menu.menu_name%> </td>
+    <td class="menu-title"> <%=menu.menu_price%> </td>
+  </tr>
+<%end%>
+</table>
+</label>
+
+
+</section>

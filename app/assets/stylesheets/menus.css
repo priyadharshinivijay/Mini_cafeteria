@@ -1,0 +1,84 @@
+h1.h1h
+{
+    font-weight: 600;
+    font-size: 20px;
+    color: #453C52; 
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+input.textfield1
+{
+    margin-top: 20px;
+    padding:8.5px 8px;
+    border: 1px solid #BFB8CC;
+    font-size: 14px;
+    margin-right: 10px;
+    border-radius: 4px;
+    color: #453C52;
+}
+
+input.textfield2
+{
+    margin-top: 20px;
+    border: 1px solid #453C52;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 6px;
+    margin-right: 10px;
+    color: #453C52;
+    
+}
+input.b1
+{
+    font-size: 14px;
+    border-radius: 4px;
+    background: #48BB78;
+    border: 1px solid transparent;
+    padding: 6px 22px;
+    color: white;
+}
+.menu-heading
+{
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.menu-title
+{
+    padding-bottom: 20px;
+    padding-right: 100px;
+}
+.s2
+{
+    margin-bottom: 20px;
+}
+.c1 {
+    
+    height: 18px;
+    width: 25px;
+    background-color: #eee;
+  }
+.b3
+{
+    font-size: 14px;
+    border-radius: 4px;
+    background: #48BB78;
+    border: 1px solid transparent;
+    padding: 6px 22px;
+    margin-top: 30px;
+    color: white;
+}
+.b4
+{
+    font-size: 14px;
+    border-radius: 4px;
+    background: #48BB78;
+    border: 1px solid transparent;
+    padding: 6px 22px;
+    margin-top: 30px;
+    margin-left: 15px;
+    color: white;
+}
+.link-to
+{
+    padding-left: 90px;
+}

@@ -1,0 +1,40 @@
+<section class="s2">
+<label class="ll1">
+<table class="menu-heading">
+  <tr>
+    <th class="menu-title">Menu name</th>
+    <th class="menu-title">Menu price</th>
+    <th class="menu-title">Add to cart</th>
+  </tr>
+
+
+
+<% Menu.all.each do |menu| %>
+  <tr>
+   
+    <td class="menu-title" name="menu_name"> <%=menu.menu_name%> </td>
+    <td class="menu-title" name="menu_price"> <%=menu.menu_price%> </td>
+    <td class="menu-title"> 
+    <%= button_to "Add",
+    orders_path(
+        order_date: Date.today,
+        menu_id: menu.id,
+        menu_name: menu.menu_name,
+        menu_price: menu.menu_price),
+    method: :post
+    %>
+    
+
+  </tr>
+
+<%end%>
+</table>
+</label>
+
+<br>
+<%= link_to "View cart",cartitems_path %>
+
+
+
+
+</section>
