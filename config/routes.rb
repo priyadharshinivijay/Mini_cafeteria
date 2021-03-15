@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/",to:"home#index"
-  #get "/signin",to:"users#index",as: :new_user
-  #post "/signin",to:"users#signin",as: :users
-  #post "/signup",to:"users#create",as: :signup
   resources :users
   resources :menus
   resources :orders
@@ -16,6 +13,6 @@ Rails.application.routes.draw do
   get "/customers",to:"customers#index"
   get "/editmenus",to:"menus#change_menu",as: :update_menu
   get "/view_menus",to:"items#index",as: :view_items
-  #post "/orderitems",to:"orderitems#create",as: :orderitems
+
   
 end
