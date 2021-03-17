@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :orders
   resources :orderitems
   resources :cartitems
-  get "/signin",to:"sessions#new",as: :new_session_page
+  get "/signin",to:"home#index",as: :new_session_page
+  
   post "/signin",to:"sessions#signin",as: :sessions
   delete "/signout" => "sessions#destroy", as: :destroy_session
   post "/signup",to:"users#create",as: :signup

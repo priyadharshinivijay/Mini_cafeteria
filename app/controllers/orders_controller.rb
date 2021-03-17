@@ -10,6 +10,17 @@ class OrdersController < ApplicationController
             menu_name: params[:menu_name],
             menu_price: params[:menu_price]
             )
-        
+    end
+    def update
+        id=params[:id]
+        order=Order.find(id)
+        order.status=true
+        order.save!
+    end
+    def destroy
+        id=params[:id]
+        order=Order.find(id)
+        order.delete
+        redirect_to orders_path
     end
 end

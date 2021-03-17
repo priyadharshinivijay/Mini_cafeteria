@@ -8,21 +8,32 @@
   <tr>
     <th class="menu-title">User id</th>
     <th class="menu-title">Order id</th>
-    <th class="menu-title">Menu name</th>
-    <th class="menu-title">Menu price</th>
+    <th class="menu-title">Order date</th>
+    <th class="menu-title">Status</th>
     
-    
+
   </tr>
  
   
     <% User.all.each do |u|%>
-        <% u.orderitems.each do |i| %>
+        <% u.orders.order(:order_date).each do |i| %>
         <tr>
-        <td class="menu-title"> <%=u.id%> </td>
-        <td class="menu-title"> <%= i.order_id %> </td>
-        <td class="menu-title"> <%= i.menu_name %> </td>
-        <td class="menu-title"> <%= i.menu_price %> </td>
         
+        <td class="menu-title"> <%=u.id%> </td>
+        <td class="menu-title"> <%= i.id %> </td>
+        <td class="menu-title"> <%= i.order_date %> </td>
+        <%= form_with(url: "/orders/#{i.id}",method:"put") do %>
+        <td class="menu-title"> <input type="checkbox" class="c1" 
+        <%= i.status ? "checked" : ""%>
+        onclick="this.form.submit()">
+        </td>
+        <%end%>
+        <%if i.status==true%>
+        <%= form_with(url:"/orders/#{i.id}",method:"delete") do %>
+          <td class="menu-title"> <input type="image" src="trash.png" class="delete">
+          </td>
+        <%end%>
+        <%end%>
     <%end%>
     </td>
     </tr>

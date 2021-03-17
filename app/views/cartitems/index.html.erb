@@ -20,7 +20,13 @@
     <td class="menu-title"> <%= i.order_id %> </td>
     <td class="menu-title"> <%= i.menu_name %> </td>
     <td class="menu-title"> <%= i.menu_price %> </td>
-    <td class="menu-title"> Pending </td>
+    <% if Order.find(i.order_id).status==true%> 
+      <td class="menu-title"> Delivered </td>
+    <% elsif Order.find(i.order_id).status==nil%>
+     <td class="menu-title"> Pending </td>
+    <% else%>
+      <td class="menu-title"> Pending</td>
+    <%end%>
     
  
     
