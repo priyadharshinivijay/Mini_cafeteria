@@ -16,16 +16,17 @@
   
     <% user= User.find(@current_user.id)%>
     <% user.orderitems.each do |i| %>
-      <tr>
+    <tr>
     <td class="menu-title"> <%= i.order_id %> </td>
     <td class="menu-title"> <%= i.menu_name %> </td>
     <td class="menu-title"> <%= i.menu_price %> </td>
     <% if Order.find(i.order_id).status==true%> 
       <td class="menu-title"> Delivered </td>
     <% elsif Order.find(i.order_id).status==nil%>
-     <td class="menu-title"> Pending </td>
+      <td class="menu-title"> Pending </td>
     <% else%>
       <td class="menu-title"> Pending</td>
+  
     <%end%>
     
  
@@ -37,3 +38,5 @@
   
 
   </table>
+  <br><br>
+  <%=link_to "Checkout",bills_path %>

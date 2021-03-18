@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get "/customers",to:"customers#index"
   get "/editmenus",to:"menus#change_menu",as: :update_menu
   get "/view_menus",to:"items#index",as: :view_items
-
+  get "/bills",to:"bills#index",as: :bills
   
 end

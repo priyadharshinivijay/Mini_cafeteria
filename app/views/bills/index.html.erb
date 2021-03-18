@@ -1,0 +1,30 @@
+<h1>Bill summary </h1>
+
+<section class="s2">
+<label class="ll1">
+<table class="menu-heading">
+  <tr>
+    <th class="menu-title">Menu name</th>
+    <th class="menu-title">Menu price</th>
+  </tr>
+    <% user=User.find(@current_user.id)%>
+        <% user.orders.each do |o|%>
+            <% o.orderitems.each do |oi|%>
+                <tr>
+                <td class="menu-title"><%= oi.menu_name %></td>
+                <td class="menu-title"><%= oi.menu_price %></td>
+                
+            <%end%>
+        <%end%>
+                <tr>
+</table>
+
+<br>
+<hr>
+<h3 class="h3">Total  :   Rs.   <%=User.find(@current_user.id).orderitems.sum(:menu_price) %> .00
+
+</h3>
+
+
+
+

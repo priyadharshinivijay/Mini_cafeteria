@@ -14,7 +14,7 @@ class SessionsController  < ApplicationController
                 redirect_to "/customers"
             end
         else
-            render plain:"Hey enter correct credentials"
+            render plain:"enter correct credentials"
         end
     end
     def destroy
