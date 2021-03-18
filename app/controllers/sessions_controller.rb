@@ -14,7 +14,8 @@ class SessionsController  < ApplicationController
                 redirect_to "/customers"
             end
         else
-            render plain:"enter correct credentials"
+            flash[:error]= "Login invalid. Enter correct credentials"
+            redirect_to "/"
         end
     end
     def destroy
