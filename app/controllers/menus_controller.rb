@@ -13,7 +13,7 @@ class MenusController < ApplicationController
             redirect_to menus_path 
         else
             #flash[:error]=menu.erros.full_messages.join(", ")
-            flash[:error]="All fields are mandatory"
+            flash[:error]="All fields are mandatory and menu size should not exceed more than 10!"
             redirect_to menus_path
         end
     end

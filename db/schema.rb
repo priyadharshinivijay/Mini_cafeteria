@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210316071624) do
+ActiveRecord::Schema.define(version: 20210330075511) do
 
   create_table "menus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
     t.string "menu_name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20210316071624) do
     t.bigint "user_id"
     t.date "order_date"
     t.boolean "status"
+    t.boolean "o_status", default: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci" do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20210316071624) do
     t.string "u_email"
     t.string "password_digest"
     t.string "u_role"
+    t.index ["u_email"], name: "index_users_on_u_email"
   end
 
 end
